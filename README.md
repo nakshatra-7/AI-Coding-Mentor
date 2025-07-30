@@ -17,7 +17,7 @@ Purpose: Get suggestions for code improvements
 Endpoint: POST /improve
 Input: JSON with original_code and modified_code
 Output: Analysis and improvement suggestions
-📊 Analysis Metrics
+Analysis Metrics
 The code analyzer provides the following metrics:
 
 Basic Metrics
