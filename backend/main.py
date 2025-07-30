@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from models import CodeRequest, ResponseModel
+from backend.models import CodeRequest, ResponseModel
 from prompts import walkthrough_prompt, debug_prompt, refactor_prompt
 from openai import OpenAI
 from code_analysis import CodeAnalyzer, compare_code_snippets, analyze_code_quality, get_code_improvement_suggestions
