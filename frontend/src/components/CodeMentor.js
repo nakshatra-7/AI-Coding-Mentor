@@ -100,34 +100,32 @@ const CodeMentor = () => {
     <div style={{ 
       maxWidth: 1400, 
       margin: '0 auto', 
-      padding: '20px',
+      padding: '28px 20px 48px',
       fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif',
-      backgroundColor: '#0a0a0a',
+      background: '#0b0b0b',
       minHeight: '100vh',
-      color: '#ffffff'
+      color: '#facc15'
     }}>
       <div style={{
         display: 'flex',
         justifyContent: 'center',
-        marginBottom: '30px'
+        marginBottom: '28px'
       }}>
         <div style={{
-          border: '2px solid #00ffff',
-          borderRadius: '12px',
-          padding: '20px 40px',
-          backgroundColor: 'rgba(0, 255, 255, 0.05)',
-          boxShadow: '0 0 20px rgba(0, 255, 255, 0.3)'
+          border: '1px solid #3a3215',
+          borderRadius: '18px',
+          padding: '24px 42px',
+          backgroundColor: '#111111',
+          boxShadow: '0 20px 60px rgba(0, 0, 0, 0.35)',
+          width: 'min(100%, 720px)'
         }}>
           <h1 style={{ 
             textAlign: 'center', 
-            color: '#00ffff',
-            fontSize: '2.5rem',
-            fontWeight: '700',
+            color: '#facc15',
+            fontSize: '2.45rem',
+            fontWeight: '750',
             margin: 0,
-            textShadow: '0 0 20px rgba(0, 255, 255, 0.5)',
-            textDecoration: 'underline',
-            textDecorationColor: '#00ffff',
-            textUnderlineOffset: '8px'
+            letterSpacing: '0'
           }}>
             AI Coding Mentor
           </h1>
@@ -140,7 +138,7 @@ const CodeMentor = () => {
               display: 'block', 
               marginBottom: '10px',
               fontWeight: '600',
-              color: '#e0e0e0',
+              color: '#fde68a',
               fontSize: '1.1rem'
             }}>
               Paste your code here:
@@ -150,18 +148,19 @@ const CodeMentor = () => {
             style={{
               width: '100%',
               padding: '20px',
-              border: '2px solid #1a1a1a',
-              borderRadius: '12px',
+              border: '1px solid #2a2a2a',
+              borderRadius: '14px',
               fontFamily: 'JetBrains Mono, Consolas, monospace',
               fontSize: '14px',
               resize: 'vertical',
-              backgroundColor: '#111111',
-              color: '#ffffff',
+              backgroundColor: '#101010',
+              color: '#fde68a',
               outline: 'none',
-              transition: 'border-color 0.3s ease',
+              transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
               boxSizing: 'border-box',
               minHeight: '300px',
-              maxHeight: '600px'
+              maxHeight: '600px',
+              boxShadow: 'inset 0 1px 0 rgba(255, 255, 255, 0.03)'
             }}
             value={code}
             onChange={(e) => setCode(e.target.value)}
@@ -171,8 +170,14 @@ function fibonacci(n) {
   if (n <= 1) return n;
   return fibonacci(n-1) + fibonacci(n-2);
 }"
-            onFocus={(e) => e.target.style.borderColor = '#00ffff'}
-            onBlur={(e) => e.target.style.borderColor = '#1a1a1a'}
+            onFocus={(e) => {
+              e.target.style.borderColor = '#facc15';
+              e.target.style.boxShadow = '0 0 0 3px rgba(250, 204, 21, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.03)';
+            }}
+            onBlur={(e) => {
+              e.target.style.borderColor = '#2a2a2a';
+              e.target.style.boxShadow = 'inset 0 1px 0 rgba(255, 255, 255, 0.03)';
+            }}
           />
         </div>
 
@@ -188,11 +193,12 @@ function fibonacci(n) {
             alignItems: 'center', 
             gap: '10px',
             padding: '12px 20px',
-            backgroundColor: mode === 'walkthrough' ? '#00ffff' : '#1a1a1a',
-            color: mode === 'walkthrough' ? '#000000' : '#e0e0e0',
-            borderRadius: '8px',
+            backgroundColor: mode === 'walkthrough' ? '#2a2410' : '#151515',
+            color: '#facc15',
+            border: mode === 'walkthrough' ? '1px solid #facc15' : '1px solid #2a2a2a',
+            borderRadius: '10px',
             cursor: 'pointer',
-            transition: 'all 0.3s ease',
+            transition: 'all 0.2s ease',
             fontWeight: '500'
           }}>
             <input
@@ -209,11 +215,12 @@ function fibonacci(n) {
             alignItems: 'center', 
             gap: '10px',
             padding: '12px 20px',
-            backgroundColor: mode === 'debug' ? '#00ffff' : '#1a1a1a',
-            color: mode === 'debug' ? '#000000' : '#e0e0e0',
-            borderRadius: '8px',
+            backgroundColor: mode === 'debug' ? '#2a2410' : '#151515',
+            color: '#facc15',
+            border: mode === 'debug' ? '1px solid #facc15' : '1px solid #2a2a2a',
+            borderRadius: '10px',
             cursor: 'pointer',
-            transition: 'all 0.3s ease',
+            transition: 'all 0.2s ease',
             fontWeight: '500'
           }}>
             <input
@@ -230,11 +237,12 @@ function fibonacci(n) {
             alignItems: 'center', 
             gap: '10px',
             padding: '12px 20px',
-            backgroundColor: mode === 'refactor' ? '#00ffff' : '#1a1a1a',
-            color: mode === 'refactor' ? '#000000' : '#e0e0e0',
-            borderRadius: '8px',
+            backgroundColor: mode === 'refactor' ? '#2a2410' : '#151515',
+            color: '#facc15',
+            border: mode === 'refactor' ? '1px solid #facc15' : '1px solid #2a2a2a',
+            borderRadius: '10px',
             cursor: 'pointer',
-            transition: 'all 0.3s ease',
+            transition: 'all 0.2s ease',
             fontWeight: '500'
           }}>
             <input
@@ -255,7 +263,7 @@ function fibonacci(n) {
               display: 'block', 
               marginBottom: '10px',
               fontWeight: '600',
-              color: '#e0e0e0',
+              color: '#fde68a',
               fontSize: '1.1rem'
             }}>
               Error message (optional):
@@ -265,20 +273,26 @@ function fibonacci(n) {
               style={{
                 width: '100%',
                 padding: '15px',
-                border: '2px solid #1a1a1a',
-                borderRadius: '8px',
+                border: '1px solid #2a2a2a',
+                borderRadius: '12px',
                 fontSize: '14px',
-                backgroundColor: '#111111',
-                color: '#ffffff',
+                backgroundColor: '#101010',
+                color: '#fde68a',
                 outline: 'none',
-                transition: 'border-color 0.3s ease',
+                transition: 'border-color 0.2s ease, box-shadow 0.2s ease',
                 boxSizing: 'border-box'
               }}
               value={error}
               onChange={(e) => setError(e.target.value)}
               placeholder="Paste any error messages here..."
-              onFocus={(e) => e.target.style.borderColor = '#00ffff'}
-              onBlur={(e) => e.target.style.borderColor = '#1a1a1a'}
+              onFocus={(e) => {
+                e.target.style.borderColor = '#facc15';
+                e.target.style.boxShadow = '0 0 0 3px rgba(250, 204, 21, 0.12)';
+              }}
+              onBlur={(e) => {
+                e.target.style.borderColor = '#2a2a2a';
+                e.target.style.boxShadow = 'none';
+              }}
             />
           </div>
         )}
@@ -289,16 +303,16 @@ function fibonacci(n) {
           style={{
             width: '100%',
             padding: '18px',
-            backgroundColor: loading ? '#1a1a1a' : '#00ffff',
-            color: loading ? '#666' : '#000000',
-            border: 'none',
+            background: loading ? '#151515' : '#171717',
+            color: loading ? '#7c6f36' : '#facc15',
+            border: loading ? '1px solid #2a2a2a' : '1px solid #facc15',
             borderRadius: '12px',
             fontSize: '18px',
             fontWeight: '700',
             cursor: loading ? 'not-allowed' : 'pointer',
             marginBottom: '20px',
-            transition: 'all 0.3s ease',
-            boxShadow: loading ? 'none' : '0 4px 20px rgba(0, 255, 255, 0.4)',
+            transition: 'all 0.2s ease',
+            boxShadow: loading ? 'none' : '0 14px 34px rgba(0, 0, 0, 0.34)',
             boxSizing: 'border-box'
           }}
           onMouseEnter={(e) => !loading && (e.target.style.transform = 'translateY(-2px)')}
@@ -322,17 +336,18 @@ function fibonacci(n) {
           <div style={{ 
             flex: '1',
             minWidth: '400px',
-            border: '2px solid #1a1a1a',
-            borderRadius: '12px',
+            border: '1px solid #2a2a2a',
+            borderRadius: '14px',
             overflow: 'hidden',
-            backgroundColor: '#111111'
+            backgroundColor: '#101010',
+            boxShadow: '0 20px 48px rgba(0, 0, 0, 0.28)'
           }}>
             <div style={{
-              backgroundColor: '#1a1a1a',
+              backgroundColor: '#151515',
               padding: '18px',
-              borderBottom: '2px solid #1a1a1a',
+              borderBottom: '1px solid #2a2a2a',
               fontWeight: '600',
-              color: '#00ffff',
+              color: '#facc15',
               fontSize: '1.1rem',
               display: 'flex',
               justifyContent: 'space-between',
@@ -345,15 +360,15 @@ function fibonacci(n) {
                 <button
                   onClick={() => copyToClipboard(allCode)}
                   style={{
-                    backgroundColor: copied ? '#10b981' : '#00ffff',
-                    color: '#000000',
-                    border: 'none',
-                    borderRadius: '6px',
+                    backgroundColor: copied ? '#1f513a' : '#171717',
+                    color: copied ? '#bbf7d0' : '#facc15',
+                    border: copied ? '1px solid #52a477' : '1px solid #facc15',
+                    borderRadius: '8px',
                     padding: '8px 16px',
                     fontSize: '12px',
                     fontWeight: '600',
                     cursor: 'pointer',
-                    transition: 'all 0.3s ease',
+                    transition: 'all 0.2s ease',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '6px'
@@ -369,7 +384,7 @@ function fibonacci(n) {
               maxHeight: '500px',
               overflowY: 'auto',
               padding: '25px',
-              backgroundColor: '#111111'
+              backgroundColor: '#101010'
             }}>
               {codeBlocks.length > 0 ? (
                 codeBlocks.map((block, index) => (
@@ -398,17 +413,18 @@ function fibonacci(n) {
           <div style={{ 
             flex: '1',
             minWidth: '400px',
-            border: '2px solid #1a1a1a',
-            borderRadius: '12px',
+            border: '1px solid #2a2a2a',
+            borderRadius: '14px',
             overflow: 'hidden',
-            backgroundColor: '#111111'
+            backgroundColor: '#101010',
+            boxShadow: '0 20px 48px rgba(0, 0, 0, 0.28)'
           }}>
             <div style={{
-              backgroundColor: '#1a1a1a',
+              backgroundColor: '#151515',
               padding: '18px',
-              borderBottom: '2px solid #1a1a1a',
+              borderBottom: '1px solid #2a2a2a',
               fontWeight: '600',
-              color: '#00ffff',
+              color: '#facc15',
               fontSize: '1.1rem',
               display: 'flex',
               justifyContent: 'space-between',
@@ -422,7 +438,7 @@ function fibonacci(n) {
               maxHeight: '500px',
               overflowY: 'auto',
               padding: '25px',
-              backgroundColor: '#111111'
+              backgroundColor: '#101010'
             }}>
               {explanation ? (
                 <SyntaxHighlighter 
@@ -448,20 +464,21 @@ function fibonacci(n) {
             <div style={{
               flex: '1',
               minWidth: '400px',
-              border: '2px solid #1a1a1a',
-              borderRadius: '12px',
+              border: '1px solid #2a2a2a',
+              borderRadius: '14px',
               overflow: 'hidden',
-              backgroundColor: '#111111',
+              backgroundColor: '#101010',
               display: 'flex',
               flexDirection: 'column',
-              maxHeight: '600px'
+              maxHeight: '600px',
+              boxShadow: '0 20px 48px rgba(0, 0, 0, 0.28)'
             }}>
               <div style={{
-                backgroundColor: '#1a1a1a',
+                backgroundColor: '#151515',
                 padding: '18px',
-                borderBottom: '2px solid #1a1a1a',
+                borderBottom: '1px solid #2a2a2a',
                 fontWeight: '600',
-                color: '#00ffff',
+                color: '#facc15',
                 fontSize: '1.1rem',
                 display: 'flex',
                 justifyContent: 'space-between',
@@ -473,7 +490,7 @@ function fibonacci(n) {
                 flex: 1,
                 overflowY: 'auto',
                 padding: '25px',
-                backgroundColor: '#111111'
+                backgroundColor: '#101010'
               }}>
                 <DiffViewer visualDiff={visualDiff} />
               </div>
@@ -485,4 +502,4 @@ function fibonacci(n) {
   );
 };
 
-export default CodeMentor; 
+export default CodeMentor;

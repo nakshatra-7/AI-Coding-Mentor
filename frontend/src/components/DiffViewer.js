@@ -11,18 +11,18 @@ const lineStyle = {
 };
 
 const typeStyles = {
-  added:   { background: "rgba(0,255,255,0.15)", color: "#00ffff" }, // cyan
-  removed: { background: "rgba(255,0,60,0.15)", color: "#ff3c3c" },  // red
-  unchanged: { background: "transparent", color: "#eee" },
-  hunk_header: { background: "rgba(0,0,0,0.2)", color: "#888", fontStyle: "italic" },
-  info: { background: "rgba(0,0,0,0.1)", color: "#888" },
+  added: { background: "rgba(74, 222, 128, 0.12)", color: "#86efac" },
+  removed: { background: "rgba(248, 113, 113, 0.12)", color: "#fca5a5" },
+  unchanged: { background: "transparent", color: "#fde68a" },
+  hunk_header: { background: "rgba(250, 204, 21, 0.08)", color: "#a89446", fontStyle: "italic" },
+  info: { background: "rgba(250, 204, 21, 0.06)", color: "#a89446" },
 };
 
 export default function DiffViewer({ visualDiff }) {
-  if (!visualDiff || !visualDiff.length) return <div style={{color:'#888'}}>No differences found.</div>;
+  if (!visualDiff || !visualDiff.length) return <div style={{color:'#a89446'}}>No differences found.</div>;
 
   return (
-    <div style={{ background: "#181c1f", borderRadius: 8, padding: 12, minHeight: 100 }}>
+    <div style={{ background: "#101010", border: "1px solid #2a2a2a", borderRadius: 12, padding: 14, minHeight: 100 }}>
       {visualDiff.map((item, idx) => (
         <div
           key={idx}
@@ -40,4 +40,4 @@ export default function DiffViewer({ visualDiff }) {
       ))}
     </div>
   );
-} 
+}
